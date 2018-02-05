@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkApplicationWindow" id="window">
+    <property name="default-width">1024</property>
+    <property name="default-height">768</property>
+    <child>
+      <object class="GtkBox" id="contents-box">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkGLArea" id="gl-area">
+            <property name="visible">True</property>
+            <property name="vexpand">True</property>
+            <property name="can-focus">True</property>
+            <property name="auto-render">False</property>
+            <property name="has-depth-buffer">True</property>
+          </object>
+          <packing>
+            <property name="pack_type">start</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkActionBar" id="navigation-bar">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkBox" id="button-box">
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkButton" id="back-button">
+                    <property name="visible">True</property>
+                    <property name="halign">start</property>
+                    <property name="image">back-image</property>
+                    <property name="action_name">win.back-history</property>
+                  </object>
+                  <packing>
+                    <property name="pack-type">start</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="forward-button">
+                    <property name="visible">True</property>
+                    <property name="halign">start</property>
+                    <property name="image">forward-image</property>
+                    <property name="action_name">win.forward-history</property>
+                  </object>
+                  <packing>
+                    <property name="pack-type">start</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="pack_type">start</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="close-button">
+                <property name="visible">True</property>
+                <property name="label">Cancel</property>
+                <property name="image">cancel-image</property>
+                <property name="always-show-image">True</property>
+                <property name="action_name">app.quit</property>
+              </object>
+              <packing>
+                <property name="pack_type">end</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="pack_type">start</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+
+  <object class="GtkImage" id="back-image">
+    <property name="visible">True</property>
+    <property name="tooltip_text">Go back to the previous page</property>
+    <property name="icon_name">go-previous</property>
+  </object>
+  <object class="GtkImage" id="forward-image">
+    <property name="visible">True</property>
+    <property name="tooltip_text">Go forward to the next page</property>
+    <property name="icon_name">go-next</property>
+  </object>
+  <object class="GtkImage" id="cancel-image">
+    <property name="visible">True</property>
+    <property name="tooltip_text">Close dialog</property>
+    <property name="icon_name">dialog-cancel</property>
+  </object>
+  <object class="GtkImage" id="finish-image">
+    <property name="visible">True</property>
+    <property name="tooltip_text">Finish dialog</property>
+    <property name="icon_name">dialog-ok</property>
+  </object>
+</interface>
+

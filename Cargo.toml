@@ -1,0 +1,19 @@
+[package]
+name = "cafcon"
+version = "0.1.0"
+authors = ["Koji Matsumoto <otomustam.ijok@gmail.com>"]
+
+[dependencies]
+gio= "0.2.0"
+gdk = "0.6.0"
+gdk-sys = "0.4.0"
+epoxy = "0.0.3"
+shared_library = "0.1.5"
+glib-itc = "0.2.1"
+hyper = "0.10.13"
+libservo = { path = "./servo/components/servo" }
+
+[dependencies.gtk]
+version = "0.2.0"
+features = ["v3_16"]
+

@@ -1,0 +1,53 @@
+name: cafcon
+version: '0.1.0'
+summary: Web authentication dialog for public Wi-Fi
+description: |
+  Web authentication dialog for public Wi-Fi.
+
+grade: devel
+confinement: devmode
+
+apps:
+  cafcon:
+    command: cafcon
+
+parts:
+  cafcon:
+    source: .
+    plugin: rust
+    rust-revision: nightly-2017-11-14
+    build-attributes: [no-system-libraries]
+    build-packages:
+      - git
+      - curl
+      - freeglut3-dev
+      - autoconf
+      - libx11-dev
+      - libfreetype6-dev
+      - libgl1-mesa-dri
+      - libglib2.0-dev
+      - xorg-dev
+      - gperf
+      - g++
+      - build-essential
+      - cmake 
+      - virtualenv 
+      - python-pip
+      - libssl-dev
+      - libbz2-dev
+      - libosmesa6-dev
+      - libxmu6 
+      - libxmu-dev
+      - libglu1-mesa-dev
+      - libgles2-mesa-dev
+      - libegl1-mesa-dev
+      - libdbus-1-dev
+      - libharfbuzz-dev
+      - ccache
+    prepare: |
+      git clone https://github.com/servo/servo.git
+      cd servo
+      git checkout 5d0d6cff81a003e72dda83f6b2dd87ad8821d779
+      cp Cargo.lock ..
+      cp -r resources ..
+
